@@ -54,7 +54,7 @@ function buscarProducto() {
         productoEncontrado.precio
     );
   } else {
-    alert("No se encontró ningún producto con ese nombre en el carrito.");
+    alert("No se encontro ningun producto con ese nombre en el carrito.");
   }
 }
 
@@ -62,7 +62,7 @@ function buscarProducto() {
 
 function filtrarProductos() {
   var precioLimite = parseFloat(
-    prompt("Ingrese el precio máximo para filtrar productos:")
+    prompt("Ingrese el precio maximo para filtrar productos:")
   );
   var productosFiltrados = carrito.filter(function (producto) {
     return producto.precio <= precioLimite;
@@ -88,7 +88,7 @@ function filtrarProductos() {
 
 while (true) {
   var opcion = prompt(
-    "Seleccione una opción:\n1. Agregar producto\n2. Mostrar carrito\n3. Buscar producto\n4. Filtrar productos por precio\n5. Salir"
+    "Seleccione una opcion:\n1. Agregar producto\n2. Mostrar carrito\n3. Buscar producto\n4. Filtrar productos por precio\n5. Salir"
   );
 
   switch (opcion) {
@@ -109,7 +109,7 @@ while (true) {
       console.log("Contenido final del carrito:", carrito);
       break;
     default:
-      alert("Opción inválida. Por favor, seleccione una opción válida.");
+      alert("Opcion invalida. Por favor, seleccione una opcion correcta.");
   }
 
   if (opcion === "5") {
