@@ -1,0 +1,108 @@
+
+@font-face {
+  font-family: "GODOFWAR";
+  src: url("../Assets/fonts/GODOFWAR.TTF");
+}
+
+body {
+    font-family: "GODOFWAR", Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(199, 199, 178) !important;
+  }
+  
+  
+  .contenedor {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .productos, .carrito {
+    width: 45%;
+  }
+  
+  .productos {
+    background-color: #1d0f25;
+    padding: 10px;
+  }
+  
+  .carrito {
+    background-color: #eaeaea;
+    padding: 10px;
+    text-align: center; /* Centrar el botón "Vaciar Carrito" */
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .producto {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .producto img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .info-producto {
+    flex-grow: 1;
+  }
+  
+  .nombre-producto {
+    font-weight: bold;
+  }
+  
+  .precio-producto {
+    margin-bottom: 5px;
+    
+  }
+  
+ .quitar-carrito{
+    background-color: red;
+ }
+
+
+ .agregar-carrito{
+    background-color: rgb(73, 128, 0);
+ }
+
+
+.custom-bg{
+background-color: rgb(199, 199, 178);
+
+}
+.custom1-bg{
+  background-color: rgb(199, 199, 178);
+}
+
+#carrito{
+  background-color: rgb(209, 209, 136);
+
+}
+
+.agregarProduc-bg{
+
+  background-color: rgb(116, 92, 11);
+
+}
+
+
+#titulo1{
+
+  text-align: center;
+  font-family: "GODOFWAR";
+  
+}
+
