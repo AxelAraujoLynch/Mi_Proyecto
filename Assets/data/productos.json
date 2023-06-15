@@ -2,7 +2,8 @@
   {
     "id": 1,
     "nombre": "Smartphone Samsung Galaxy A51",
-    "precio": 80999
+    "precio": 80999,
+    "imagen": "./assets/images/producto1.webp"
   },
   {
     "id": 2,

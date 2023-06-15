@@ -10,31 +10,53 @@ document.addEventListener("DOMContentLoaded", function () {
   let carrito = [];
 
   // Cargar productos disponibles desde JSON local
+
   function cargarProductos() {
     fetch("./assets/data/productos.json")
       .then(response => response.json())
       .then(data => {
+        let listaProductos = document.getElementById("lista-productos");
+
         data.forEach(function (producto) {
-          let li = document.createElement("li");
-          li.dataset.id = producto.id;
-          li.dataset.nombre = producto.nombre;
-          li.dataset.precio = producto.precio;
+          let card = document.createElement("div");
+          card.classList.add("col");
 
-          li.innerHTML = `
-            <span>${producto.nombre} - $${producto.precio.toFixed(2)}</span>
-            <button class="agregar-carrito">Agregar</button>
-          `;
+          let cardBody = document.createElement("div");
+          cardBody.classList.add("card", "h-100");
 
-          let agregarBtn = li.querySelector(".agregar-carrito");
-          agregarBtn.classList.add("btn", "btn-success", "mb-2", "ms-4", "mt-2", "btn-sm");
+          let img = document.createElement("img");
+          img.src = producto.imagen;
+          img.alt = producto.nombre;
+          img.classList.add("card-img-top");
 
+          let cardContent = document.createElement("div");
+          cardContent.classList.add("card-body");
+
+          let nombre = document.createElement("h5");
+          nombre.classList.add("card-title");
+          nombre.textContent = producto.nombre;
+
+          let precio = document.createElement("p");
+          precio.classList.add("card-text");
+          precio.textContent = "$" + producto.precio.toFixed(2);
+
+          let agregarBtn = document.createElement("button");
+          agregarBtn.classList.add("btn", "btn-success");
+          agregarBtn.textContent = "Agregar";
+
+          cardContent.appendChild(nombre);
+          cardContent.appendChild(precio);
+          cardContent.appendChild(agregarBtn);
+
+          cardBody.appendChild(img);
+          cardBody.appendChild(cardContent);
+
+          card.appendChild(cardBody);
+
+          listaProductos.appendChild(card);
+
+          // Evento click al botón "Agregar"
           agregarBtn.addEventListener("click", function () {
-            let producto = {
-              id: li.dataset.id,
-              nombre: li.dataset.nombre,
-              precio: parseFloat(li.dataset.precio),
-            };
-
             carrito.push(producto);
             mostrarCarrito();
             Swal.fire({
@@ -44,8 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
               confirmButtonText: 'Aceptar'
             });
           });
-
-          listaProductos.appendChild(li);
+          
         });
       })
       .catch(error => {
@@ -101,39 +122,40 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Mostrar el carrito de compras
-  function mostrarCarrito() {
-    listaCarrito.innerHTML = "";
+// Mostrar el carrito de compras
+function mostrarCarrito() {
+  listaCarrito.innerHTML = "";
 
-    carrito.forEach(function (producto) {
-      let li = document.createElement("li");
-      li.innerHTML = `
-        <span>${producto.nombre} - $${producto.precio.toFixed(2)}</span>
-        <button class="quitar-carrito" data-id="${producto.id}">Quitar</button>
-      `;
+  carrito.forEach(function (producto) {
+    let li = document.createElement("li");
+    li.innerHTML = `
+      <span>${producto.nombre} - $${producto.precio.toFixed(2)}</span>
+      <button class="quitar-carrito" data-id="${producto.id}">Quitar</button>
+    `;
 
-      let agregarBtn = li.querySelector(".quitar-carrito");
-      agregarBtn.classList.add("btn", "btn-danger", "mb-2", "ms-4", "mt-2", "btn-sm");
+    let agregarBtn = li.querySelector(".quitar-carrito");
+    agregarBtn.classList.add("btn", "btn-danger", "mb-2", "ms-4", "mt-2", "btn-sm");
 
-      agregarBtn.addEventListener("click", function () {
-        let id = li.querySelector(".quitar-carrito").dataset.id;
-        carrito = carrito.filter(function (producto) {
-          return producto.id !== id;
-        });
-        mostrarCarrito();
-        Swal.fire({
-          title: 'Producto eliminado',
-          text: 'El producto ha sido eliminado del carrito',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        });
+    agregarBtn.addEventListener("click", function () {
+      let id = producto.id;
+      carrito = carrito.filter(function (prod) {
+        return prod.id !== id;
       });
-
-      listaCarrito.appendChild(li);
+      mostrarCarrito();
+      Swal.fire({
+        title: 'Producto eliminado',
+        text: 'El producto ha sido eliminado del carrito',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      });
     });
 
-    actualizarTotal();
-  }
+    listaCarrito.appendChild(li);
+  });
+
+  actualizarTotal();
+}
+
 
   // Actualizar el total del carrito
   function actualizarTotal() {
