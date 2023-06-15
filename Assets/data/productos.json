@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombre": "Smartphone Samsung Galaxy A51",
+    "precio": 80999
+  },
+  {
+    "id": 2,
+    "nombre": "Laptop Lenovo",
+    "precio": 70999
+  },
+  {
+    "id": 3,
+    "nombre": "Televisor LED LG 43",
+    "precio": 5000
+  },
+  {
+    "id": 4,
+    "nombre": "Reloj inteligente Xiaomi",
+    "precio": 6999
+  },
+  {
+    "id": 5,
+    "nombre": "Cámara digital Canon EOS Rebel T7",
+    "precio": 73999
+  },
+  {
+    "id": 6,
+    "nombre": "Auriculares inalámbricos",
+    "precio": 35999
+  },
+  {
+    "id": 7,
+    "nombre": "Monitor de juego Zowie 24",
+    "precio": 65999
+  },
+  {
+    "id": 8,
+    "nombre": "Impresora multifunción HP",
+    "precio": 4500
+  },
+  {
+    "id": 9,
+    "nombre": "Consola de videojuegos PlayStation 5",
+    "precio": 150999
+  },
+  {
+    "id": 10,
+    "nombre": "Tableta Huawei MatePad T8",
+    "precio": 45999
+  },
+  {
+    "id": 11,
+    "nombre": "Robot aspirador Gadnic",
+    "precio": 20050
+  }
+]
