@@ -10,22 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let carrito = [];
 
   function cargarProductos() {
-    const productosData = localStorage.getItem('productosData');
-
-    if (productosData) {
-      const data = JSON.parse(productosData);
-      mostrarProductos(data);
-    } else {
-      fetch('./assets/data/productos.json')
-        .then(response => response.json())
-        .then(data => {
-          localStorage.setItem('productosData', JSON.stringify(data));
-          mostrarProductos(data);
-        })
-        .catch(error => {
-          console.log("Error al cargar los productos:", error);
-        });
-    }
+    fetch('./assets/data/productos.json')
+      .then(response => response.json())
+      .then(data => {
+        mostrarProductos(data);
+      })
+      .catch(error => {
+        console.log("Error al cargar los productos:", error);
+      });
   }
 
   function mostrarProductos(data) {

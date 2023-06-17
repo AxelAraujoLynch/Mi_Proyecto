@@ -14,46 +14,55 @@
   {
     "id": 3,
     "nombre": "Televisor LED LG 43",
-    "precio": 5000
+    "precio": 5000,
+    "imagen": "./assets/images/producto3.jpg"
   },
   {
     "id": 4,
     "nombre": "Reloj inteligente Xiaomi",
-    "precio": 6999
+    "precio": 6999,
+    "imagen": "./assets/images/producto4.jpg"
   },
   {
     "id": 5,
     "nombre": "Cámara digital Canon EOS Rebel T7",
-    "precio": 73999
+    "precio": 73999,
+    "imagen": "./assets/images/producto5.jpg"
   },
   {
     "id": 6,
-    "nombre": "Auriculares inalámbricos",
-    "precio": 35999
+    "nombre": "Auriculares inalámbricos samsung",
+    "precio": 35999,
+    "imagen": "./assets/images/producto6.jpg"
   },
   {
     "id": 7,
     "nombre": "Monitor de juego Zowie 24",
-    "precio": 65999
+    "precio": 65999,
+    "imagen": "./assets/images/producto7.webp"
   },
   {
     "id": 8,
     "nombre": "Impresora multifunción HP",
-    "precio": 4500
+    "precio": 4500,
+    "imagen": "./assets/images/producto8.webp"
   },
   {
     "id": 9,
     "nombre": "Consola de videojuegos PlayStation 5",
-    "precio": 150999
+    "precio": 150999,
+    "imagen": "./assets/images/producto9.webp"
   },
   {
     "id": 10,
     "nombre": "Tableta Huawei MatePad T8",
-    "precio": 45999
+    "precio": 45999,
+    "imagen": "./assets/images/producto10.webp"
   },
   {
     "id": 11,
     "nombre": "Robot aspirador Gadnic",
-    "precio": 20050
+    "precio": 20050,
+    "imagen": "./assets/images/producto11.webp"
   }
 ]
