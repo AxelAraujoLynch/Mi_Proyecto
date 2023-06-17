@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Obtener elementos del DOM
   let listaProductos = document.getElementById("lista-productos");
   let listaCarrito = document.getElementById("lista-carrito");
   let totalCarrito = document.getElementById("total");
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let carrito = [];
 
+  // Cargar productos desde JSON al iniciar la pagina
   function cargarProductos() {
     fetch('./assets/data/productos.json')
       .then(response => response.json())
@@ -20,10 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  // Mostrar productos en la lista de productos
   function mostrarProductos(data) {
     listaProductos.innerHTML = "";
 
     data.forEach(function (producto) {
+      // Crear elementos Html para cada producto
       let card = document.createElement("div");
       card.classList.add("col");
 
@@ -50,17 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       agregarBtn.classList.add("btn", "btn-success");
       agregarBtn.textContent = "Agregar";
 
-      cardContent.appendChild(nombre);
-      cardContent.appendChild(precio);
-      cardContent.appendChild(agregarBtn);
-
-      cardBody.appendChild(img);
-      cardBody.appendChild(cardContent);
-
-      card.appendChild(cardBody);
-
-      listaProductos.appendChild(card);
-
+      // Agregar eventos y contenido a los elementos
       agregarBtn.addEventListener("click", function () {
         carrito.push(producto);
         mostrarCarrito();
@@ -71,11 +65,24 @@ document.addEventListener("DOMContentLoaded", function () {
           confirmButtonText: 'Aceptar'
         });
       });
+
+      cardContent.appendChild(nombre);
+      cardContent.appendChild(precio);
+      cardContent.appendChild(agregarBtn);
+
+      cardBody.appendChild(img);
+      cardBody.appendChild(cardContent);
+
+      card.appendChild(cardBody);
+
+      listaProductos.appendChild(card);
     });
   }
 
+  // Cargar productos al iniciar la pagina
   cargarProductos();
 
+  // Vaciar carrito
   vaciarCarritoBtn.addEventListener("click", function () {
     carrito = [];
     mostrarCarrito();
@@ -87,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Agregar producto manualmente
   agregarManualmenteBtn.addEventListener("click", function () {
     let nombreProducto = nombreProductoInput.value;
     let precioProducto = parseFloat(precioProductoInput.value);
@@ -119,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Mostrar productos en el carrito
   function mostrarCarrito() {
     listaCarrito.innerHTML = "";
 
@@ -152,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     actualizarTotal();
   }
 
+  // Actualizar el total del carrito
   function actualizarTotal() {
     let total = carrito.reduce(function (sum, producto) {
       return sum + producto.precio;
