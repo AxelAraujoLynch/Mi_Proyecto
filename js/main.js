@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Cargar productos desde JSON al iniciar la pagina
   function cargarProductos() {
-    fetch('./assets/data/productos.json')
-      .then(response => response.json())
-      .then(data => {
+    fetch("./assets/data/productos.json")
+      .then((response) => response.json())
+      .then((data) => {
         mostrarProductos(data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error al cargar los productos:", error);
       });
   }
@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
         carrito.push(producto);
         mostrarCarrito();
         Swal.fire({
-          title: 'Producto agregado',
-          text: 'El producto ha sido agregado al carrito',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
+          title: "Producto agregado",
+          text: "El producto ha sido agregado al carrito",
+          icon: "success",
+          confirmButtonText: "Aceptar",
         });
       });
 
@@ -87,10 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
     carrito = [];
     mostrarCarrito();
     Swal.fire({
-      title: 'Carrito vaciado',
-      text: 'El carrito ha sido vaciado',
-      icon: 'success',
-      confirmButtonText: 'Aceptar'
+      title: "Carrito vaciado",
+      text: "El carrito ha sido vaciado",
+      icon: "success",
+      confirmButtonText: "Aceptar",
     });
   });
 
@@ -109,20 +109,20 @@ document.addEventListener("DOMContentLoaded", function () {
       carrito.push(producto);
       mostrarCarrito();
       Swal.fire({
-        title: 'Producto agregado',
-        text: 'El producto ha sido agregado al carrito',
-        icon: 'success',
-        confirmButtonText: 'Aceptar'
+        title: "Producto agregado",
+        text: "El producto ha sido agregado al carrito",
+        icon: "success",
+        confirmButtonText: "Aceptar",
       });
 
       nombreProductoInput.value = "";
       precioProductoInput.value = "";
     } else {
       Swal.fire({
-        title: 'Error',
-        text: 'Por favor ingresa el nombre y precio del producto',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
+        title: "Error",
+        text: "Por favor ingresa el nombre y precio del producto",
+        icon: "error",
+        confirmButtonText: "Aceptar",
       });
     }
   });
@@ -139,7 +139,14 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
 
       let quitarBtn = li.querySelector(".quitar-carrito");
-      quitarBtn.classList.add("btn", "btn-danger", "mb-2", "ms-4", "mt-2", "btn-sm");
+      quitarBtn.classList.add(
+        "btn",
+        "btn-danger",
+        "mb-2",
+        "ms-4",
+        "mt-2",
+        "btn-sm"
+      );
 
       quitarBtn.addEventListener("click", function () {
         let id = producto.id;
@@ -148,10 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         mostrarCarrito();
         Swal.fire({
-          title: 'Producto eliminado',
-          text: 'El producto ha sido eliminado del carrito',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
+          title: "Producto eliminado",
+          text: "El producto ha sido eliminado del carrito",
+          icon: "success",
+          confirmButtonText: "Aceptar",
         });
       });
 

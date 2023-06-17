@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "nombre": "Laptop Lenovo",
+    "nombre": "Netbook Lenovo",
     "precio": 70999,
     "imagen": "./assets/images/producto2.jpg"
   },
